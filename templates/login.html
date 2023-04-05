@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="static/login.css">
+  <title>Страница авторизации</title>
+</head>
+<body>
+  <h1>Авторизация</h1>
+  <form method="post">
+    <label for="login">Логин пользователя:</label>
+    <input type="text" id="login" name="login"><br><br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Войти">
+  </form>
+  	{% if error %}
+    	<div class="error">{{ error }}</div>
+	{% endif %}
+  <p>Еще нет аккаунта? <a href="registration">Зарегистрируйтесь</a></p>
+</body>
+</html>

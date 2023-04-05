@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="static/index.css">
+	<title>Главная страница</title>
+</head>
+<body>
+	<h1>Главная страница</h1>
+	
+	<form action="/upload" method="POST" enctype="multipart/form-data">
+		<label for="audio-file">Выберите файл для загрузки:</label>
+		<input type="file" name="audiofile">
+		<input type="text" name="filename" placeholder="Введите имя файла" >
+		  <br><br>
+		<label for="voice">Выберите голос:</label>
+		<select id="voice" name="voice">
+			<option value="Albert">Альберт</option>
+			<option value="Misha">Миша</option>
+			<option value="Vasya">Вася</option>
+		</select><br><br>
+		<input type="submit" value="Отправить">
+	</form>
+	
+	<p><a href="profile">Перейти на страницу профиля</a></p>
+	<p>Добро пожаловать, {{ session['username'] }}! <a href="/logout">Выход</a></p>
+<div>
+	{% with messages = get_flashed_messages() %}
+  		{% if messages %}
+    		<ul class="flashes">
+    		{% for message in messages %}
+      			<li>{{ message }}</li>
+    		{% endfor %}
+    		</ul>
+  		{% endif %}
+	{% endwith %}
+</div>
+	
+</body>
+</html>

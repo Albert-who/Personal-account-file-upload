@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="static/registration.css">
+	<title>Страница регистрации</title>
+</head>
+<body>
+	<h1>Регистрация</h1>
+	<form method="POST" action="/registration">
+		<label for="username">Имя пользователя:</label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="login">Логин:</label>
+		<input type="text" id="login" name="login"><br><br>
+		<label for="password">Пароль:</label>
+		<input type="password" id="password" name="password"><br><br>
+		<label for="confirm-password">Подтвердите пароль:</label>
+		<input type="password" id="confirm-password" name="confirm-password"><br><br>
+		<input type="submit" value="Зарегистрироваться">
+	</form>
+	{% if message %}
+    	<div class="message">{{ message }}</div>
+	{% endif %}
+	{% if error %}
+    	<div class="error">{{ error }}</div>
+	{% endif %}
+	<p>Уже есть аккаунт? <a href="login">Войдите</a></p>
+</body>
+</html>
